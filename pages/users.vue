@@ -13,33 +13,25 @@
             d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"
           />
         </svg>
-        <span class="font-semibold text-xl tracking-tight">研修用ページ</span>
+        <span class="font-semibold text-xl tracking-tight">研修用</span>
       </div>
 
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow"></div>
         <div
           class="inline-block font-semibold text-xl px-4 py-2 text-white border-white mt-4 lg:mt-0"
-        >
-          {{ $store.state.auth.user_name }}
-        </div>
+        >{{ $store.state.auth.user_name }}</div>
         <div
           class="inline-block font-semibold text-xl px-4 py-2 text-white border-white mt-4 lg:mt-0"
-        >
-          {{ $store.state.auth.staff_desc }}
-        </div>
+        >{{ $store.state.auth.staff_desc }}</div>
         <div
           class="inline-block font-semibold text-xl px-4 py-2 text-white border-white mt-4 lg:mt-0"
-        >
-          {{ $store.state.auth.store_code }}
-        </div>
+        >{{ $store.state.auth.store_code }}</div>
         <div>
           <button
             class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
             v-on:click="logout"
-          >
-            logout
-          </button>
+          >logout</button>
         </div>
       </div>
     </nav>
@@ -52,34 +44,22 @@
               <tr>
                 <th
                   class="py-2 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
-                >
-                  ＃
-                </th>
+                >＃</th>
                 <th
                   class="py-2 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
-                >
-                  ユーザー名
-                </th>
+                >ユーザー名</th>
                 <th
                   class="py-2 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
-                >
-                  パスワード
-                </th>
+                >パスワード</th>
                 <th
                   class="py-2 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
-                >
-                  店舗スタッフ区分
-                </th>
+                >店舗スタッフ区分</th>
                 <th
                   class="py-2 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
-                >
-                  所属店舗
-                </th>
+                >所属店舗</th>
                 <th
                   class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm border-b border-grey-light"
-                >
-                  action
-                </th>
+                >action</th>
               </tr>
             </thead>
             <tbody>
@@ -88,21 +68,11 @@
                 v-for="user in users"
                 v-bind:key="user.id"
               >
-                <td class="py-1 px-6 border-b border-grey-light">
-                  {{ user.id }}
-                </td>
-                <td class="py-1 px-6 border-b border-grey-light">
-                  {{ user.user_id }}
-                </td>
-                <td class="py-1 px-6 border-b border-grey-light">
-                  {{ user.user_pass }}
-                </td>
-                <td class="py-1 px-6 border-b border-grey-light">
-                  {{ user.staff_desc }}
-                </td>
-                <td class="py-1 px-6 border-b border-grey-light">
-                  {{ user.store_code }}
-                </td>
+                <td class="py-1 px-6 border-b border-grey-light">{{ user.id }}</td>
+                <td class="py-1 px-6 border-b border-grey-light">{{ user.user_id }}</td>
+                <td class="py-1 px-6 border-b border-grey-light">{{ user.user_pass }}</td>
+                <td class="py-1 px-6 border-b border-grey-light">{{ user.staff_desc }}</td>
+                <td class="py-1 px-6 border-b border-grey-light">{{ user.store_code }}</td>
                 <td
                   class="py-1 px-6 border-b border-grey-light container mx-auto flex justify-between"
                 >
@@ -112,15 +82,9 @@
                     viewBox="0 0 20 20"
                     @click="alertDisplay(user)"
                   >
-                    <path
-                      d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"
-                    />
+                    <path d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z" />
                   </svg>
-                  <modal
-                    :val="postItem"
-                    v-if="showModal"
-                    @close="closeModal"
-                  ></modal>
+                  <modal :val="postItem" v-if="showModal" @close="closeModal"></modal>
                   <svg
                     class="fill-current text-pink-500 inline-block h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +131,10 @@ export default {
       users: [],
       showModal: false,
       postItem: "",
-      items: [{ id: 1, name: "aのitem" }, { id: 2, name: "bのitem" }]
+      items: [
+        { id: 1, name: "aのitem" },
+        { id: 2, name: "bのitem" }
+      ]
     };
   },
   mounted() {

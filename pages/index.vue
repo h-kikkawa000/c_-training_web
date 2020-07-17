@@ -72,7 +72,7 @@ export default {
           } else {
             this.$swal.fire({
               title: "認証エラー",
-              text: "ユーザー名またはパスワードが間違っています。",
+              text: "ユーザー名またはパスワードが間違っています。 ",
               type: "error"
             });
           }

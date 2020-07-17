@@ -1,3 +1,6 @@
+require("dotenv").config();
+const { API } = process.env;
+
 export default {
   //mode: 'spa',
   /*
@@ -43,7 +46,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
-    "vue-sweetalert2/nuxt"
+    "vue-sweetalert2/nuxt",
+    "@nuxtjs/dotenv"
   ],
   /*
    ** Axios module configuration
@@ -59,5 +63,8 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  env: {
+    API
   }
 };
